@@ -42,6 +42,6 @@ struct AppetizerDetailView: View {
 struct AppetizerDetailView_Previews: PreviewProvider {
     static var previews: some View {
         AppetizerDetailView(appetizer: Appetizer.testAppetizer)
-            .previewLayout(.fixed(width: 350, height: 600))
+            .previewLayout(.fixed(width: 320, height: 525))
     }
 }
