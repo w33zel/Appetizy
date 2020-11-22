@@ -8,14 +8,25 @@
 import SwiftUI
 
 struct AppetizerListView: View {
-    @StateObject var model = AppertizyModel()
+//    @StateObject var model = AppertizyModel()
+    @EnvironmentObject var model: AppertizyModel
     
     var body: some View {
         ZStack {
-            List(model.appetizer, rowContent: AppetizerCell.init)
-                .navigationTitle("🍟 Appetizer")
+            List(model.appetizers) { appetizer in
+                AppetizerCell(appetizer: appetizer)
+                    .onTapGesture {
+                        model.selectedAppetizer = appetizer
+                    }
+            }
+            .navigationBarHidden(model.selectedAppetizer != nil)
+            .navigationTitle("🍟 Appetizer")
             
-            if model.appetizer.isEmpty {
+            if model.selectedAppetizer != nil {
+                AppetizerDetailView()
+            }
+            
+            if model.appetizers.isEmpty {
                 ProgressView()
                     .scaleEffect(2)
                     .progressViewStyle(CircularProgressViewStyle(tint: Color.accentColor))
@@ -27,6 +38,9 @@ struct AppetizerListView: View {
 
 struct AppetizerListView_Previews: PreviewProvider {
     static var previews: some View {
-        AppetizerListView()
+        NavigationView {
+            AppetizerListView()
+                .environmentObject(AppertizyModel())
+        }
     }
 }

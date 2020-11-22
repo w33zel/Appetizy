@@ -15,6 +15,7 @@ struct DismissButton: View {
             Image(systemName: "xmark")
                 .padding(10)
                 .background(Color.white.opacity(0.5))
+                .foregroundColor(.black)
                 .clipShape(Circle())
                 .padding(5)
         }
@@ -25,5 +26,6 @@ struct DismissButton_Previews: PreviewProvider {
     static var previews: some View {
         DismissButton(action: { })
             .previewLayout(.sizeThatFits)
+            .background(Color.black)
     }
 }

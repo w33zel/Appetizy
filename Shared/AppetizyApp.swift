@@ -12,6 +12,7 @@ struct AppetizyApp: App {
     var body: some Scene {
         WindowGroup {
             TabNavigation()
+                .environmentObject(AppertizyModel())
         }
     }
 }

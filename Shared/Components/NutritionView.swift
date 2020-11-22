@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct NutritionView: View {
-    let appetizer: Appetizer
+    let appetizer: Appetizer?
 
     var body: some View {
         HStack {
             VStack(spacing: 10) {
                 Text("Calories")
                     .fontWeight(.semibold)
-                Text("\(appetizer.calories)")
+                Text("\(appetizer?.calories ?? 0)")
                     .fontWeight(.light)
                     .italic()
             }
@@ -24,7 +24,7 @@ struct NutritionView: View {
             VStack(spacing: 10) {
                 Text("Carbs")
                     .fontWeight(.semibold)
-                Text("\(appetizer.carbs)")
+                Text("\(appetizer?.carbs ?? 0)")
                     .fontWeight(.light)
                     .italic()
             }
@@ -33,7 +33,7 @@ struct NutritionView: View {
             VStack(spacing: 10) {
                 Text("Protein")
                     .fontWeight(.semibold)
-                Text("\(appetizer.protein)")
+                Text("\(appetizer?.protein ?? 0)")
                     .fontWeight(.light)
                     .italic()
             }

@@ -8,40 +8,48 @@
 import SwiftUI
 
 struct AppetizerDetailView: View {
-    let appetizer: Appetizer
+    @State private var image = Image("food-placeholder")
+    @EnvironmentObject var model: AppertizyModel
 
     var body: some View {
-        ZStack(alignment: .topTrailing) {
-            VStack {
-                Image(appetizer.imageURL.absoluteString)
-                    .resizable()
-                    .scaledToFit()
-                VStack(spacing: 20) {
-                    Text(appetizer.name)
-                        .font(.title)
-                        .fontWeight(.medium)
-                        .lineLimit(2)
-                        .minimumScaleFactor(0.8)
-                        .multilineTextAlignment(.center)
-                    Text(appetizer.description)
-                        .multilineTextAlignment(.center)
+        ZStack {
+            VisualEffectBlur(blurStyle: .systemUltraThinMaterial) { }.edgesIgnoringSafeArea(.all)
+                .onTapGesture { model.clearSelectedAppetizer() }
+            ZStack(alignment: .topTrailing) {
+                VStack {
+                    image
+                        .resizable()
+                        .scaledToFit()
+                    VStack(spacing: 20) {
+                        Text(model.selectedAppetizer?.name ?? "")
+                            .font(.title)
+                            .fontWeight(.medium)
+                            .lineLimit(2)
+                            .minimumScaleFactor(0.8)
+                            .multilineTextAlignment(.center)
+                        Text(model.selectedAppetizer?.description ?? "")
+                            .multilineTextAlignment(.center)
+                    }
+                    .padding(.horizontal)
+                    
+                    Spacer()
+                    NutritionView(appetizer: model.selectedAppetizer)
+                    Spacer()
+                    AddOrderButton(price: model.selectedAppetizer?.price ?? 0, action: { })
+                    Spacer()
                 }
-                .padding(.horizontal)
-                
-                Spacer()
-                NutritionView(appetizer: appetizer)
-                Spacer()
-                AddOrderButton(price: appetizer.price, action: { })
-                Spacer()
+                DismissButton(action: { model.clearSelectedAppetizer() })
             }
-            DismissButton(action: { })
+            .background(Color(.systemBackground))
+            .frame(width: 320, height: 525)
+            .cornerRadius(15)
         }
     }
 }
 
 struct AppetizerDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        AppetizerDetailView(appetizer: Appetizer.testAppetizer)
-            .previewLayout(.fixed(width: 320, height: 525))
+        AppetizerDetailView()
+            .environmentObject(AppertizyModel())
     }
 }

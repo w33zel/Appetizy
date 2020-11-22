@@ -8,7 +8,8 @@
 import Foundation
 
 final class AppertizyModel: ObservableObject {
-    @Published var appetizer: [Appetizer] = []
+    @Published var appetizers: [Appetizer] = []
+    @Published var selectedAppetizer: Appetizer?
     @Published var alert: AlertItem?
     @Published var isLoading = false
     
@@ -17,8 +18,8 @@ final class AppertizyModel: ObservableObject {
         loadAppetizer()
     }
     
-    private func loadAppetizerImage(_ appetizer: Appetizer) {
-        
+    func clearSelectedAppetizer() {
+        selectedAppetizer = nil
     }
     
     func loadAppetizer() {
@@ -27,8 +28,8 @@ final class AppertizyModel: ObservableObject {
             DispatchQueue.main.async {
                 isLoading = false
                 switch result {
-                case .success(let appetizer):
-                    self.appetizer = appetizer
+                case .success(let appetizers):
+                    self.appetizers = appetizers
                 case .failure(let error):
                     switch error {
                     case .debugError(let error, let checking):
