@@ -47,6 +47,7 @@ struct AppetizerDetailView: View {
             .cornerRadius(15)
         }
         .onAppear {
+            print("AppetizerDetailView appear")
             NetworkManager.shared.loadImage(at: model.selectedAppetizer?.imageURL) { uiImage in
                 guard let uiImage = uiImage else { return }
                 DispatchQueue.main.async {

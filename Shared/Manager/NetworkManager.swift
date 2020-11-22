@@ -18,6 +18,7 @@ final class NetworkManager {
     private init() { }
     
     func getAppitizers(handler: @escaping AppetizerHandler) {
+        print(">>> getAppitizers")
         let task = URLSession.shared.dataTask(for: .appetizer) { result in
             switch result {
             case .success(let data):
@@ -37,6 +38,8 @@ final class NetworkManager {
     }
         
     func loadImage(at url: URL?, handler: @escaping (UIImage?) -> Void) {
+        print(">>> loadImage")
+
         guard let url = url else { return }
         
         let cacheKey = NSString(string: url.absoluteString)

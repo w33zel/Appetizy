@@ -32,6 +32,7 @@ struct AppetizerCell: View {
             .padding(.leading)
         }
         .onAppear {
+            print("AppetizerCell appear")
             NetworkManager.shared.loadImage(at: appetizer.imageURL) { uiImage in
                 guard let uiImage = uiImage else { return }
                 DispatchQueue.main.async {

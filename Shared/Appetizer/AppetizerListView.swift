@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct AppetizerListView: View {
-//    @StateObject var model = AppertizyModel()
     @EnvironmentObject var model: AppertizyModel
     
     var body: some View {
@@ -31,6 +30,10 @@ struct AppetizerListView: View {
                     .scaleEffect(2)
                     .progressViewStyle(CircularProgressViewStyle(tint: Color.accentColor))
             }
+        }
+        .onAppear {
+            print("AppetizerListView appear")
+            self.model.loadAppetizers()
         }
         .alert(item: $model.alert) { Alert(from: $0) }
     }
