@@ -13,6 +13,7 @@
 		4A1E968F2569D3D300650E60 /* AddOrderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1E968E2569D3D300650E60 /* AddOrderButton.swift */; };
 		4A1E96932569D73B00650E60 /* DismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1E96922569D73B00650E60 /* DismissButton.swift */; };
 		4A1E96972569E2CB00650E60 /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1E96962569E2CB00650E60 /* VisualEffectBlur.swift */; };
+		4A1E969B256AC4C100650E60 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1E969A256AC4C100650E60 /* Account.swift */; };
 		4A631B76255EDC0400E0ECF2 /* AppetizyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A631B63255EDC0200E0ECF2 /* AppetizyApp.swift */; };
 		4A631B77255EDC0400E0ECF2 /* AppetizyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A631B63255EDC0200E0ECF2 /* AppetizyApp.swift */; };
 		4A631B7A255EDC0400E0ECF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A631B65255EDC0400E0ECF2 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 		4A1E968E2569D3D300650E60 /* AddOrderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrderButton.swift; sourceTree = "<group>"; };
 		4A1E96922569D73B00650E60 /* DismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissButton.swift; sourceTree = "<group>"; };
 		4A1E96962569E2CB00650E60 /* VisualEffectBlur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
+		4A1E969A256AC4C100650E60 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		4A631B63255EDC0200E0ECF2 /* AppetizyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizyApp.swift; sourceTree = "<group>"; };
 		4A631B65255EDC0400E0ECF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A631B6A255EDC0400E0ECF2 /* Appetizy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appetizy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,6 +165,7 @@
 		4A631B90255EE51F00E0ECF2 /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				4A1E969A256AC4C100650E60 /* Account.swift */,
 				4A631B99255EE55900E0ECF2 /* AccountView.swift */,
 			);
 			path = Account;
@@ -297,6 +300,7 @@
 				4A631B9E255EF04700E0ECF2 /* Appetizer.swift in Sources */,
 				4A0AE52925696B2C0061CF5B /* NetworkManager.swift in Sources */,
 				4A631B87255EE3AA00E0ECF2 /* TabNavigation.swift in Sources */,
+				4A1E969B256AC4C100650E60 /* Account.swift in Sources */,
 				4A631BAB255F0BF600E0ECF2 /* Endpoint.swift in Sources */,
 				4A1E96972569E2CB00650E60 /* VisualEffectBlur.swift in Sources */,
 				4A1E96932569D73B00650E60 /* DismissButton.swift in Sources */,

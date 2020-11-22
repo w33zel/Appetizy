@@ -13,6 +13,8 @@ final class AppertizyModel: ObservableObject {
     @Published var alert: AlertItem?
     @Published var isLoading = false
     
+    @Published var account = Account()
+    
     
     init() {
         loadAppetizer()
