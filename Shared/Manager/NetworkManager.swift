@@ -36,7 +36,9 @@ final class NetworkManager {
         task.resume()
     }
         
-    func loadImage(at url: URL, handler: @escaping (UIImage?) -> Void) {
+    func loadImage(at url: URL?, handler: @escaping (UIImage?) -> Void) {
+        guard let url = url else { return }
+        
         let cacheKey = NSString(string: url.absoluteString)
 
         if let image = cache.object(forKey: cacheKey) {

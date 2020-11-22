@@ -13,8 +13,10 @@ struct AppetizerDetailView: View {
 
     var body: some View {
         ZStack {
-            VisualEffectBlur(blurStyle: .systemUltraThinMaterial) { }.edgesIgnoringSafeArea(.all)
+            VisualEffectBlur(blurStyle: .systemUltraThinMaterial) { }
+                .edgesIgnoringSafeArea(.all)
                 .onTapGesture { model.clearSelectedAppetizer() }
+            
             ZStack(alignment: .topTrailing) {
                 VStack {
                     image
@@ -43,6 +45,14 @@ struct AppetizerDetailView: View {
             .background(Color(.systemBackground))
             .frame(width: 320, height: 525)
             .cornerRadius(15)
+        }
+        .onAppear {
+            NetworkManager.shared.loadImage(at: model.selectedAppetizer?.imageURL) { uiImage in
+                guard let uiImage = uiImage else { return }
+                DispatchQueue.main.async {
+                    self.image = Image(uiImage: uiImage)
+                }
+            }
         }
     }
 }
