@@ -23,7 +23,7 @@ struct AddOrderButton: View {
             .background(Color.accentColor)
             .foregroundColor(.white)
             .font(.title2)
-            .cornerRadius(25)
+            .cornerRadius(30)
             .padding(.horizontal)
         }
     }
