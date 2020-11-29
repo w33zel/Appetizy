@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct AddOrderButton: View {
-    let price: Double
+    let price: Double?
     let action: () -> Void
     
     var body: some View {
         Button(action: action) {
             HStack {
                 Spacer()
-                Text("$ \(String(format: "%.2f", price)) - Add to Order")
+                Text("$ \(String(format: "%.2f", price ?? 0)) - Add to Order")
                     .fontWeight(.medium)
                 Spacer()
             }

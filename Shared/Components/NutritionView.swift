@@ -43,7 +43,7 @@ struct NutritionView: View {
 
 struct NutritionView_Previews: PreviewProvider {
     static var previews: some View {
-        NutritionView(appetizer: Appetizer.testAppetizer)
+        NutritionView(appetizer: MockData.testAppetizer)
             .previewLayout(.sizeThatFits)
     }
 }

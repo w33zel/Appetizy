@@ -11,7 +11,7 @@ struct AppetizerResponse: Codable {
     let request: [Appetizer]
 }
 
-struct Appetizer: Codable, Identifiable {
+struct Appetizer: Codable, Identifiable, Hashable {
     let id: Int
     let name: String
     let description: String
@@ -23,8 +23,24 @@ struct Appetizer: Codable, Identifiable {
 }
 
 // Mock Data
-extension Appetizer {
-    static let all = [testAppetizer, testAppetizer, testAppetizer, testAppetizer, testAppetizer, testAppetizer, testAppetizer]
+struct MockData {
+    static var all: [Appetizer] {
+        var appitizers: [Appetizer] = []
+        let names = ["Yummy meat", "Yummy yummy meat", "Verry yummy yummy meat", "Really verry yummy yummy meat"]
+        
+        for index in 1 ..< 20 {
+            appitizers.append(.init(id: index + 100,
+                                    name: names.randomElement()!,
+                                    description: "This is a test Appetizer named \"Yummy meat\" and its much yummy.",
+                                    price: 1.5,
+                                    imageURL: URL(string: "asian-flank-steak")!,
+                                    calories: 100,
+                                    protein: 9,
+                                    carbs: 9))
+        }
+        
+        return appitizers
+    }
     static let testAppetizer = Appetizer(id: 1,
                                          name: "Yummy meat",
                                          description: "This is a test Appetizer named \"Yummy meat\" and its much yummy.",

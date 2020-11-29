@@ -5,21 +5,72 @@
 //  Created by Christian Arlt on 13.11.20.
 //
 
-import Foundation
+import SwiftUI
 
 final class AppertizyModel: ObservableObject {
+    @AppStorage("user") private var userData: Data?
+    
+    @Published var alert: AlertItem?
+    
+    // Appetizer
     @Published var appetizers: [Appetizer] = []
     @Published var selectedAppetizer: Appetizer?
+<<<<<<< Updated upstream
     @Published var alert: AlertItem?
     @Published var isLoading = false
+=======
+>>>>>>> Stashed changes
     
+    // Account
     @Published var account = Account()
+    
+    // Order
+    @Published var order = Order()
     
     
     init() {
         print(">>> init Model")
+<<<<<<< Updated upstream
 
 //        loadAppetizers()
+=======
+        loadUser()
+        loadAppetizers()
+    }
+    
+    func placeOrder() {
+        guard let appetizer = selectedAppetizer else { return }
+        
+        if order.appetizers.contains(appetizer) {
+            // alert already in orders
+            return
+        }
+        order.appetizers.append(appetizer)
+    }
+    
+    func saveAccount() {
+        guard account.isValid else { return }
+        
+        do {
+            let data = try JSONEncoder().encode(account)
+            userData = data
+            alert = AlertContext.saveSuccess
+        } catch {
+            alert = AlertContext.saveFailure
+        }
+    }
+    
+    func loadUser() {
+        guard let data = userData else { return }
+        guard let account = try? JSONDecoder().decode(Account.self, from: data) else { return }
+        self.account = account
+    }
+    
+    func validateForm() {
+        if !account.isValidEmail { alert = AlertContext.invalideEmail }
+        if !account.isFullAged { alert = AlertContext.underAged }
+        if !account.isValidForm { alert = AlertContext.invalideForm }
+>>>>>>> Stashed changes
     }
     
     func clearSelectedAppetizer() {

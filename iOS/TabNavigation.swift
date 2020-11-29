@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct TabNavigation: View {
-    @State private var selection: Tab = .appetizer
+    @State private var selection: Tab = .account
     
     var body: some View {
         TabView(selection: $selection) {
             NavigationView {
-                AppetizerListView()
+                AppetizerListVStack()
             }
             .tabItem { Image(systemName: "house") }
             .tag(Tab.appetizer)

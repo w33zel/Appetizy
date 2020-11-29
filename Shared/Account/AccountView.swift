@@ -7,8 +7,15 @@
 
 import SwiftUI
 
+<<<<<<< Updated upstream
 struct AccountView: View {
     @EnvironmentObject var model: AppertizyModel
+=======
+
+struct AccountView: View {
+    @EnvironmentObject var model: AppertizyModel
+    @State var show = false
+>>>>>>> Stashed changes
 
     var body: some View {
         Form {
@@ -19,10 +26,19 @@ struct AccountView: View {
                     .keyboardType(.emailAddress)
                     .autocapitalization(.none)
                     .disableAutocorrection(true)
-                DatePicker("Birthdate", selection: $model.account.birthdate, displayedComponents: .date)
-                Button(action: { }) {
-                    Text("Save changes")
+                VStack(alignment: .leading) {
+                    Text("Birthdate")
+                    DatePicker("", selection: $model.account.birthdate, displayedComponents: .date)
+                        .datePickerStyle(WheelDatePickerStyle())
                 }
+                Button(action: {
+                    model.validateForm()
+                    model.saveAccount()
+                }) {
+                    Text("Save changes")
+                        .bold()
+                }
+                .foregroundColor(model.account.isValid ? .accentColor : .red)
             }
             Section(header: Text("Request")) {
                 Toggle("Extra Napkins", isOn: $model.account.extraNapkins)
@@ -31,6 +47,7 @@ struct AccountView: View {
             .toggleStyle(SwitchToggleStyle(tint: .accentColor))
 
         }
+        .alert(item: $model.alert) { Alert(from: $0) }
         .navigationTitle("🤷‍♂️ Account")
     }
 }

@@ -8,17 +8,15 @@
 import SwiftUI
 
 struct AppetizerCell: View {
-    @State private var image = Image("food-placeholder")
-
     let appetizer: Appetizer
 
     var body: some View {
         HStack {
-            image
-                .resizable()
+            AppetizerRemoteImage(imageURL: appetizer.imageURL)
                 .aspectRatio(1.33, contentMode: .fit)
                 .frame(width: 120)
                 .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+
             VStack(alignment: .leading, spacing: 5) {
                 Text(appetizer.name)
                     .font(.title2)
@@ -29,6 +27,7 @@ struct AppetizerCell: View {
                     .fontWeight(.semibold)
                     .foregroundColor(.secondary)
             }
+<<<<<<< Updated upstream
             .padding(.leading)
         }
         .onAppear {
@@ -39,13 +38,16 @@ struct AppetizerCell: View {
                     self.image = Image(uiImage: uiImage)
                 }
             }
+=======
+            Spacer()
+>>>>>>> Stashed changes
         }
     }
 }
 
 struct AppetizerCell_Previews: PreviewProvider {
     static var previews: some View {
-        AppetizerCell(appetizer: .testAppetizer)
+        AppetizerCell(appetizer: MockData.testAppetizer)
     }
 }
  
