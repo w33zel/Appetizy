@@ -7,16 +7,9 @@
 
 import SwiftUI
 
-<<<<<<< Updated upstream
 struct AccountView: View {
     @EnvironmentObject var model: AppertizyModel
-=======
-
-struct AccountView: View {
-    @EnvironmentObject var model: AppertizyModel
-    @State var show = false
->>>>>>> Stashed changes
-
+    
     var body: some View {
         Form {
             Section(header: Text("Personal Info:")) {

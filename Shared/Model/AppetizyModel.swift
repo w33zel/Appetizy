@@ -15,12 +15,7 @@ final class AppertizyModel: ObservableObject {
     // Appetizer
     @Published var appetizers: [Appetizer] = []
     @Published var selectedAppetizer: Appetizer?
-<<<<<<< Updated upstream
-    @Published var alert: AlertItem?
-    @Published var isLoading = false
-=======
->>>>>>> Stashed changes
-    
+
     // Account
     @Published var account = Account()
     
@@ -30,10 +25,6 @@ final class AppertizyModel: ObservableObject {
     
     init() {
         print(">>> init Model")
-<<<<<<< Updated upstream
-
-//        loadAppetizers()
-=======
         loadUser()
         loadAppetizers()
     }
@@ -70,7 +61,6 @@ final class AppertizyModel: ObservableObject {
         if !account.isValidEmail { alert = AlertContext.invalideEmail }
         if !account.isFullAged { alert = AlertContext.underAged }
         if !account.isValidForm { alert = AlertContext.invalideForm }
->>>>>>> Stashed changes
     }
     
     func clearSelectedAppetizer() {
@@ -82,10 +72,8 @@ final class AppertizyModel: ObservableObject {
     func loadAppetizers() {
         print(">>> loadAppetizers")
 
-        isLoading = true
         NetworkManager.shared.getAppitizers { [self] result in
             DispatchQueue.main.async {
-                isLoading = false
                 switch result {
                 case .success(let appetizers):
                     self.appetizers = appetizers

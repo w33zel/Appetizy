@@ -27,20 +27,7 @@ struct AppetizerCell: View {
                     .fontWeight(.semibold)
                     .foregroundColor(.secondary)
             }
-<<<<<<< Updated upstream
-            .padding(.leading)
-        }
-        .onAppear {
-            print("AppetizerCell appear")
-            NetworkManager.shared.loadImage(at: appetizer.imageURL) { uiImage in
-                guard let uiImage = uiImage else { return }
-                DispatchQueue.main.async {
-                    self.image = Image(uiImage: uiImage)
-                }
-            }
-=======
             Spacer()
->>>>>>> Stashed changes
         }
     }
 }

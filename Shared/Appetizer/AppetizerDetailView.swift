@@ -8,16 +8,8 @@
 import SwiftUI
 
 struct AppetizerDetailView: View {
-<<<<<<< Updated upstream
-    @State private var image = Image("food-placeholder")
     @EnvironmentObject var model: AppertizyModel
-
-=======
-//    @State private var image = Image("food-placeholder")
-    @EnvironmentObject var model: AppertizyModel
-//    @ObservedObject var model: AppetizerViewModel
     
->>>>>>> Stashed changes
     var body: some View {
         ZStack {
             VisualEffectBlur(blurStyle: .systemUltraThinMaterial) { }
@@ -61,11 +53,7 @@ struct AppetizerDetailView: View {
 
 struct AppetizerDetailView_Previews: PreviewProvider {
     static var previews: some View {
-<<<<<<< Updated upstream
-        AppetizerDetailView()
-=======
         AppetizerDetailView()//model: AppetizerViewModel())
->>>>>>> Stashed changes
             .environmentObject(AppertizyModel())
     }
 }
