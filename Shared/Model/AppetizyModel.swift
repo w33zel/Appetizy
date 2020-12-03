@@ -29,6 +29,10 @@ final class AppertizyModel: ObservableObject {
         loadAppetizers()
     }
     
+    func removeOrder(indexSet: IndexSet) {
+        order.appetizers.remove(atOffsets: indexSet)
+    }
+    
     func placeOrder() {
         guard let appetizer = selectedAppetizer else { return }
         

@@ -29,11 +29,11 @@ struct MockData {
         let names = ["Yummy meat", "Yummy yummy meat", "Verry yummy yummy meat", "Really verry yummy yummy meat"]
         
         for index in 1 ..< 20 {
-            appitizers.append(.init(id: index + 100,
+            appitizers.append(.init(id: index,
                                     name: names.randomElement()!,
                                     description: "This is a test Appetizer named \"Yummy meat\" and its much yummy.",
                                     price: 1.5,
-                                    imageURL: URL(string: "asian-flank-steak")!,
+                                    imageURL: URL(string: "https://seanallen-course-backend.herokuapp.com/images/appetizers/asian-flank-steak.jpg")!,
                                     calories: 100,
                                     protein: 9,
                                     carbs: 9))
@@ -45,7 +45,7 @@ struct MockData {
                                          name: "Yummy meat",
                                          description: "This is a test Appetizer named \"Yummy meat\" and its much yummy.",
                                          price: 1.5,
-                                         imageURL: URL(string: "asian-flank-steak")!,
+                                         imageURL: URL(string: "https://seanallen-course-backend.herokuapp.com/images/appetizers/asian-flank-steak.jpg")!,
                                          calories: 100,
                                          protein: 9,
                                          carbs: 9)
