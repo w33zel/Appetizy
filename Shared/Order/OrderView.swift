@@ -13,21 +13,27 @@ struct OrderView: View {
     let edgeInsets = EdgeInsets(top: -1, leading: -1, bottom: -1, trailing: -1)
     
     var body: some View {
-        VStack {
-            List {
-                ForEach(model.order.appetizers) { appetizer in
-                    AppetizerCell(appetizer: appetizer)
-                        .padding()
-                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                        .listRowInsets(edgeInsets)
-                        .background(Color(.systemBackground))
+        ZStack {
+            VStack {
+                List {
+                    ForEach(model.order.appetizers) { appetizer in
+                        AppetizerCell(appetizer: appetizer)
+                            .padding()
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                            .listRowInsets(edgeInsets)
+                            .background(Color(.systemBackground))
+                    }
+                    .onDelete(perform: model.removeOrder)
                 }
-                .onDelete(perform: model.removeOrder)
+                .listStyle(PlainListStyle())
+                
+                AddOrderButton(price: model.order.finalPrice, action: { })
+                    .padding(.bottom)
             }
-            .listStyle(PlainListStyle())
             
-            AddOrderButton(price: model.order.finalPrice, action: { })
-                .padding(.bottom)
+            if model.order.appetizers.isEmpty {
+                EmptyState(type: .order, message: "You have no items in order.\nPlease add some appetizer.")
+            }
         }
         .navigationTitle("☝️ Orders")
     }
@@ -39,7 +45,6 @@ struct OrderView_Previews: PreviewProvider {
             OrderView()
                 .navigationTitle("☝️ Orders")
                 .environmentObject(AppertizyModel())
-                .preferredColorScheme(.light)
         }
     }
 }
