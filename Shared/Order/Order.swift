@@ -10,10 +10,6 @@ import Foundation
 struct Order {
     var appetizers: [Appetizer] = []
     var finalPrice: Double {
-        get {
-            var price = 0.0
-            appetizers.forEach { price += $0.price }
-            return price
-        }
+        appetizers.reduce(0.0, {$0 + $1.price})
     }
 }
