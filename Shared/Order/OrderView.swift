@@ -27,7 +27,7 @@ struct OrderView: View {
                 }
                 .listStyle(PlainListStyle())
                 
-                AddOrderButton(price: model.order.finalPrice, action: { })
+                OrderButton(type: .placeOrder)
                     .padding(.bottom)
             }
             

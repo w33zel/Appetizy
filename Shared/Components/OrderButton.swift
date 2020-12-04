@@ -7,15 +7,23 @@
 
 import SwiftUI
 
-struct AddOrderButton: View {
-    let price: Double?
-    let action: () -> Void
+struct OrderButton: View {
+    @EnvironmentObject private var model: AppertizyModel
+    
+    let type: OrderButtonType
+//    let price: Double?
+//    let action: () -> Void
+    
+    enum OrderButtonType: String {
+        case addOrder = "Add to Order"
+        case placeOrder = "Place Order"
+    }
     
     var body: some View {
-        Button(action: action) {
+        Button(action: model.addOrder) {
             HStack {
                 Spacer()
-                Text("$ \(String(format: "%.2f", price ?? 0)) - Add to Order")
+                Text("$ \(String(format: "%.2f", model.selectedAppetizer?.price ?? 0)) - \(type.rawValue)")
                     .fontWeight(.medium)
                 Spacer()
             }
@@ -31,7 +39,8 @@ struct AddOrderButton: View {
 
 struct AddOrderButton_Previews: PreviewProvider {
     static var previews: some View {
-        AddOrderButton(price: 9.99, action: { })
+        OrderButton(type: .addOrder)
+            .environmentObject(AppertizyModel())
             .previewLayout(.sizeThatFits)
     }
 }

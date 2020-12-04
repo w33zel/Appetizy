@@ -12,7 +12,7 @@
 		4A1A4515257415CC001FA05E /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A4513257415CC001FA05E /* Date+Ext.swift */; };
 		4A1E96852569C69100650E60 /* AppetizerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1E96842569C69100650E60 /* AppetizerDetailView.swift */; };
 		4A1E968B2569D25100650E60 /* NutritionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1E968A2569D25100650E60 /* NutritionView.swift */; };
-		4A1E968F2569D3D300650E60 /* AddOrderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1E968E2569D3D300650E60 /* AddOrderButton.swift */; };
+		4A1E968F2569D3D300650E60 /* OrderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1E968E2569D3D300650E60 /* OrderButton.swift */; };
 		4A1E96932569D73B00650E60 /* DismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1E96922569D73B00650E60 /* DismissButton.swift */; };
 		4A1E96972569E2CB00650E60 /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1E96962569E2CB00650E60 /* VisualEffectBlur.swift */; };
 		4A1E969B256AC4C100650E60 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1E969A256AC4C100650E60 /* Account.swift */; };
@@ -47,7 +47,7 @@
 		4A1A4513257415CC001FA05E /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		4A1E96842569C69100650E60 /* AppetizerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerDetailView.swift; sourceTree = "<group>"; };
 		4A1E968A2569D25100650E60 /* NutritionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionView.swift; sourceTree = "<group>"; };
-		4A1E968E2569D3D300650E60 /* AddOrderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrderButton.swift; sourceTree = "<group>"; };
+		4A1E968E2569D3D300650E60 /* OrderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderButton.swift; sourceTree = "<group>"; };
 		4A1E96922569D73B00650E60 /* DismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissButton.swift; sourceTree = "<group>"; };
 		4A1E96962569E2CB00650E60 /* VisualEffectBlur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
 		4A1E969A256AC4C100650E60 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
@@ -189,7 +189,7 @@
 			children = (
 				4A631BC7255F24A800E0ECF2 /* Alert+Error.swift */,
 				4A1E968A2569D25100650E60 /* NutritionView.swift */,
-				4A1E968E2569D3D300650E60 /* AddOrderButton.swift */,
+				4A1E968E2569D3D300650E60 /* OrderButton.swift */,
 				4A1E96922569D73B00650E60 /* DismissButton.swift */,
 				4ACBED08256C51F2007317DF /* RemoteImage.swift */,
 				4A9224F0257ADD9C005A056D /* EmptyState.swift */,
@@ -330,7 +330,7 @@
 				4A631BA5255EF6D400E0ECF2 /* AppetizerCell.swift in Sources */,
 				4ACBED09256C51F2007317DF /* RemoteImage.swift in Sources */,
 				4AFA440C257311E100A58B8E /* AppetizerListVStack.swift in Sources */,
-				4A1E968F2569D3D300650E60 /* AddOrderButton.swift in Sources */,
+				4A1E968F2569D3D300650E60 /* OrderButton.swift in Sources */,
 				4A631BBD255F16E500E0ECF2 /* URLSession+Ext.swift in Sources */,
 				4A631B9A255EE55900E0ECF2 /* AccountView.swift in Sources */,
 				4A1E968B2569D25100650E60 /* NutritionView.swift in Sources */,

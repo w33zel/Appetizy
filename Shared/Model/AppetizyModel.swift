@@ -33,7 +33,7 @@ final class AppertizyModel: ObservableObject {
         order.appetizers.remove(atOffsets: indexSet)
     }
     
-    func placeOrder() {
+    func addOrder() {
         guard let appetizer = selectedAppetizer else { return }
         
         if order.appetizers.contains(appetizer) {

@@ -35,8 +35,7 @@ struct AppetizerDetailView: View {
                     Spacer()
                     NutritionView(appetizer: model.selectedAppetizer)
                     Spacer()
-                    AddOrderButton(price: model.selectedAppetizer?.price,
-                                   action: { model.placeOrder() })
+                    OrderButton(type: .addOrder)
                     Spacer()
                 }
                 DismissButton(action: { model.clearSelectedAppetizer() })
