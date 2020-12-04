@@ -23,7 +23,7 @@ struct OrderButton: View {
         Button(action: model.addOrder) {
             HStack {
                 Spacer()
-                Text("$ \(String(format: "%.2f", model.selectedAppetizer?.price ?? 0)) - \(type.rawValue)")
+                Text("$ \(String(format: "%.2f", model.selectedAppetizer?.price ?? model.order.finalPrice)) - \(type.rawValue)")
                     .fontWeight(.medium)
                 Spacer()
             }

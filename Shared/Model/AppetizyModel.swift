@@ -41,6 +41,7 @@ final class AppertizyModel: ObservableObject {
             return
         }
         order.appetizers.append(appetizer)
+        clearSelectedAppetizer()
     }
     
     func saveAccount() {
