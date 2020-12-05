@@ -8,19 +8,17 @@
 import SwiftUI
 
 struct AppetizerListVStack: View {
-//    @StateObject var model = AppetizerViewModel()
     @EnvironmentObject var model: AppertizyModel
-    
+
     var body: some View {
         ZStack {
             ScrollView {
                 LazyVStack(spacing: .zero) {
                     ForEach(model.appetizers) { appetizer in
-                        AppetizerCell(appetizer: appetizer)
-                            .onTapGesture { model.selectedAppetizer = appetizer }
-                            .onDisappear { print("ListItem disappear - \(appetizer.name)") }
-                            .onAppear { print("ListItem appear") }
-                            .padding()
+                            AppetizerCell(appetizer: appetizer)
+                                .padding()
+                                .onTapGesture { model.selectedAppetizer = appetizer }
+                        
                     }
                 }
             }
@@ -36,8 +34,6 @@ struct AppetizerListVStack: View {
             }
         }
         .navigationTitle(model.selectedAppetizer != nil ? "" : "🍟 Appetizer")
-        .onDisappear { print("AppetizerListVStack disappear") }
-        .onAppear { print("AppetizerListVStack appear") }
         .onTapGesture { model.clearSelectedAppetizer() }
     }
 }

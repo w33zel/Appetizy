@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TabNavigation: View {
-    @State private var selection: Tab = .account
+    @State private var selection: Tab = .appetizer
     
     var body: some View {
         TabView(selection: $selection) {

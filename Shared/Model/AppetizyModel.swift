@@ -24,7 +24,6 @@ final class AppertizyModel: ObservableObject {
     
     
     init() {
-        print(">>> init Model")
         loadUser()
         loadAppetizers()
     }
@@ -69,14 +68,10 @@ final class AppertizyModel: ObservableObject {
     }
     
     func clearSelectedAppetizer() {
-        print(">>> clearSelectedAppetizer")
-
         selectedAppetizer = nil
     }
     
     func loadAppetizers() {
-        print(">>> loadAppetizers")
-
         NetworkManager.shared.getAppitizers { [self] result in
             DispatchQueue.main.async {
                 switch result {

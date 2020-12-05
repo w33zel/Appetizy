@@ -24,7 +24,7 @@ struct NutritionView: View {
             VStack(spacing: 10) {
                 Text("Carbs")
                     .fontWeight(.semibold)
-                Text("\(appetizer?.carbs ?? 0)")
+                Text("\(appetizer?.carbs ?? 0) g")
                     .fontWeight(.light)
                     .italic()
             }
@@ -33,7 +33,7 @@ struct NutritionView: View {
             VStack(spacing: 10) {
                 Text("Protein")
                     .fontWeight(.semibold)
-                Text("\(appetizer?.protein ?? 0)")
+                Text("\(appetizer?.protein ?? 0) g")
                     .fontWeight(.light)
                     .italic()
             }

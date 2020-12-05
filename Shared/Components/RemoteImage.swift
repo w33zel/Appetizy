@@ -35,7 +35,6 @@ struct AppetizerRemoteImage: View {
     var body: some View {
         RemoteImage(image: imageLoader.image)
             .onAppear {
-                print("AppetizerRemoteImage appear")
                 imageLoader.loadImage(from: imageURL)
             }
     }
